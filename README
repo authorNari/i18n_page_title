@@ -1,0 +1,52 @@
+I18nPageTitle
+=========
+
+It's page title generator by i18n.
+
+
+Example
+=======
+
+app/helper/application_helper.rb:
+
+  module ApplicationHelper
+    include I18nPageTitleHelper
+  end
+
+app/views/layouts/application.html.erb:
+
+  <!DOCTYPE html>
+  <html>
+    <head>
+      <title><%= page_title %> - Kint</title>
+      <%= stylesheet_link_tag :all %>
+      <%= javascript_include_tag :defaults %>
+      <%= csrf_meta_tag %>
+    </head>
+    <body>
+  
+      <h1><%= page_title %></h1>
+      <p id="notice"><%= notice %></p>
+      
+      <%= yield %>
+  
+    </body>
+  </html>
+
+config/locals/en.yml
+
+  en:
+    page_titles:
+      defaults:
+        show: show
+        new: create
+        create: create
+        edit: update
+        update: update
+        destory: destroy
+      user_sessions_title: user session
+      user_sessions:
+        new: login
+      users_title: account info 
+
+Copyright (c) 2010 Narihiro Nakamura, released under the MIT license
