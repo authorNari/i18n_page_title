@@ -1,11 +1,9 @@
-I18nPageTitle
-=========
+= I18nPageTitle
 
 It's page title generator by i18n.
 
 
-Example
-=======
+== Example
 
 app/helper/application_helper.rb:
 
